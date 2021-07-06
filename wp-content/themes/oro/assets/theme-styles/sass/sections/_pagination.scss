@@ -1,0 +1,20 @@
+/**
+ *	Styling for the Pagination
+ */
+ 
+.oro-pagination {
+	@extend %heading-font;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	.nav-links {
+		& > * {
+			margin: .8em;
+		}
+		span.current {
+			position: relative;
+			color: lightness(white, -35%);
+			font-weight: 400;
+		}
+	}
+}

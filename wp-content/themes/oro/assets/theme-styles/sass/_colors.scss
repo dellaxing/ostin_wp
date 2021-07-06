@@ -1,0 +1,50 @@
+@use "sass:color";
+
+$primary: #7a94ce;
+$hover: color.adjust($primary, $lightness: +20%);
+$shadow1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$shadow1-hover: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$shadow3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$shadow5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+%shadow1 {
+	box-shadow: $shadow1;
+}
+
+%shadow2 {
+	box-shadow: $shadow2;
+}
+
+%shadow3 {
+	box-shadow: $shadow3;
+}
+
+%shadow4 {
+	box-shadow: $shadow4;
+}
+
+%shadow5 {
+	box-shadow: $shadow5;
+}
+
+@mixin shadow( $shadow ) {
+	box-shadow: $shadow;
+}
+
+@function lightness( $color, $amount ) {
+	
+	$result: color.adjust( $color, $lightness: $amount );
+	
+	@return $result;
+	
+}
+
+@function alpha( $color, $amount ) {
+	
+	$result: color.adjust( $color, $alpha: $amount );
+	
+	@return $result;
+
+}

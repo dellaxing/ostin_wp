@@ -1,0 +1,170 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'functions' as *;
+
+/* Range Slider */
+.range-slider {
+     width: 100%;
+ }
+
+ .range-slider__range {
+     -webkit-appearance: none;
+     width: calc(100% - (95px));
+     height: 10px;
+     border-radius: 5px;
+     background: #d7dcdf;
+     padding: 0;
+     margin: 0;
+ }
+
+ .range-slider__range::-webkit-slider-thumb {
+     -webkit-appearance: none;
+     appearance: none;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background: #0085ba;
+     cursor: pointer;
+     -webkit-transition: background .15s ease-in-out;
+     transition: background .15s ease-in-out;
+ }
+
+ .range-slider__range::-webkit-slider-thumb:hover {
+     background: #0085ba;
+ }
+
+ .range-slider__range:active::-webkit-slider-thumb {
+     background: #0085ba;
+ }
+
+ .range-slider__range::-moz-range-thumb {
+     width: 20px;
+     height: 20px;
+     border: 0;
+     border-radius: 50%;
+     background: #0085ba;
+     cursor: pointer;
+     -webkit-transition: background .15s ease-in-out;
+     transition: background .15s ease-in-out;
+ }
+
+ .range-slider__range::-moz-range-thumb:hover {
+     background: #0085ba;
+ }
+
+ .range-slider__range:active::-moz-range-thumb {
+     background: #0085ba;
+ }
+
+ .range-slider__value {
+     display: inline-block;
+     position: relative;
+     width: 60px;
+     color: #fff;
+     line-height: 20px;
+     text-align: center;
+     border-radius: 3px;
+     background: #0085ba;
+     padding: 5px 10px;
+     margin-left: 8px;
+ }
+
+ /*.range-slider__value:after {
+     position: absolute;
+     top: 8px;
+     left: -7px;
+     width: 0;
+     height: 0;
+     border-top: 7px solid transparent;
+     border-right: 7px solid #0085ba;
+     border-bottom: 7px solid transparent;
+     content: '';
+ }*/
+
+ ::-moz-range-track {
+     background: #d7dcdf;
+     border: 0;
+ }
+
+ input::-moz-focus-inner, input::-moz-focus-outer {
+     border: 0;
+ }
+ 
+ 
+#oro_meta {
+	label.align-sidebar-label {
+		display: inline-block;
+		width: 45%;
+		input {
+			display: none;
+		}
+		input:checked + img {
+			border: 3px solid #2885bb;
+		}
+	}
+}
+ 
+ // Image Radio Control
+ 
+.image_radio_button_control .radio-button-label > input {
+	display: none;
+}
+.image_radio_button_control .radio-button-label > input:checked + img {
+	border: 3px solid #2885bb;
+}
+
+.image_radio_button_control .radio-button-label > img {
+	width: 22%;
+	vertical-align: middle;
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+#customize-theme-controls #accordion-section-oro_pro {
+	h3 {
+		color: white;
+		background-color: #7c96ca;
+		&:after {
+			color: white;
+		}
+	}
+	&:hover {
+		h3 {
+			background-color: lighten(#7c96ca, 5%);
+			border-left: solid 4px white;
+		}
+	}
+}
+
+.customize-control-oro-link a {
+	text-align: center;
+	padding: 1em 0 !important;
+}
+
+.control-section-wptrt-button {
+
+	.accordion-section-title {
+
+		// Make sure that the background color doesn't change if the
+		// section title is hovered or focused because this is an
+		// non-expandable section.
+		&:hover,
+		&:focus {
+			background-color: #fff;
+		}
+
+		// Adjusts the button to make sure it's vertically aligned in
+		// the section title and provide some margin horizontally to
+		// keep text from butting against it.
+		.button {
+			margin-top:  -4px;
+			margin-left: 8px;
+			font-weight: 400;
+
+			.rtl & {
+				margin-left:  0;
+				margin-right: 8px;
+			}
+		}
+	}
+}

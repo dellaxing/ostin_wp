@@ -1,0 +1,39 @@
+/**
+ *	Styling for Single Post Page
+ */
+ 
+body.single-post {
+	h3#oro-related-posts-title {
+		text-align: center;
+		margin-bottom: .5em;
+		margin-top: 0;
+		@media screen and (min-width: 992px) {
+			text-align: left;
+		}
+	}
+	#oro-related-posts {
+		overflow: auto;
+		margin: auto -1.5em;
+	}
+	.nav-links {
+		padding: 1.2em;
+		border-radius: .8em;
+		background-color: lightness(white, -3%);
+		.nav-thumb {
+			display: inline-block;
+			width: 30%;
+		}
+		.nav-prev-title, .nav-next-title {
+			@include line-clamp(1);
+			font-size: .8em;
+			max-width: 50%;
+		}
+		.nav-next-title {
+			float: right;
+		}
+	}
+	#oro-related-posts-wrapper {
+		display: inline-block;
+		margin-top: 2em;
+	}
+}

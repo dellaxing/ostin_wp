@@ -1,0 +1,11 @@
+
+$title-font: "Montserrat", sans-serif;
+$body-font: "Open Sans", sans-serif;
+
+%heading-font {
+	font-family: $title-font;
+}
+
+%body-font {
+	font-family: $body-font;
+}

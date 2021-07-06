@@ -1,0 +1,64 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'functions' as *;
+
+.wp-block-button {
+	border-radius: 1.75em;
+	padding: .6em 1.25em;
+	border: 0;
+	letter-spacing: .05em;
+	@extend %heading-font;
+	text-transform: uppercase;
+	&:focus {
+		outline: none;
+	}
+	&.is-style-fill .wp-block-button__link:not(.has-background) {
+		background-color: $primary;
+	}
+	.wp-block-button__link:not(.has-text-color), .wp-block-button__link:not(.has-background)  {
+		color: white;
+		background-color: $primary;
+	}
+	&.is-style-outline {
+		& > .wp-block-button__link:not(.has-text-color) {
+			color: $primary;
+			background-color: transparent;
+		}
+	}
+}
+
+.wp-block-button__link {
+	&.has-faded-blue-background-color {
+		background-color: $primary;
+	}
+	
+	&.has-faded-blue-color {
+		color: $primary !important;
+	}
+}
+
+/*
+	&.secondary {
+		color: $primary;
+		background-color: white;
+	}
+	&.bordered-primary {
+		color: $primary;
+		background-color: transparent;
+		border: solid 3px $primary;
+		@include transition(transform 100ms $standard);
+		&:hover {
+			@extend %bordered-hover;
+		}
+	}
+	&.bordered-white {
+		color: white;
+		background-color: transparent;
+		border: solid 3px white;
+		@include transition(transform 100ms $standard);
+		&:hover {
+			@extend %bordered-hover;
+		}
+	}
+}
+*/

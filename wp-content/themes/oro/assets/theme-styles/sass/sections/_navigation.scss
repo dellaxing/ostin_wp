@@ -1,0 +1,135 @@
+/**
+ *	Style for Navigation Drawer
+ */
+ 
+#panel-top-bar {
+	overflow: auto;
+	background-color: $primary;
+	padding-top: 1.5em;
+	.menu-link {
+		float: left;
+		border: 0;
+		border-radius: 0;
+		background-color: transparent;
+		padding: 0;
+		margin: .8em;
+		i.fa-circle {
+			color: white;
+		}
+		i.fa-chevron-right {
+			color: $primary;
+			font-size: .9em;
+			&:before {
+				margin-right: -2px;
+			}
+		}
+		  
+	}
+
+}
+ 
+#menu {
+	z-index: 999;
+	text-align: left;
+	overflow-y: auto;
+	background-color: white;
+	@extend %heading-font;
+		.go-to-top {
+		background: none;
+		float: left;
+		border: 0;
+		i {
+			color: white;
+	  	}
+	}
+	.go-to-bottom {
+		background: none;
+		float: right;
+		border: 0;
+		i {
+			color: white;
+		}
+	}
+	ul {
+		margin-left: 0px;
+		padding: 0px;
+		display: inline-block;
+		width: 100%;
+	    li {
+			list-style: none;
+			padding: 0px;
+			position: relative;
+			&:before {
+				display: none;
+			}
+		    a {
+		        display: block;
+		        color: $primary;
+		        padding: 20px;
+		        width: 100%;
+		        font-size: .8em;
+		        text-transform: uppercase;
+		        overflow: hidden;
+		        white-space: nowrap;
+		        text-overflow: ellipsis;
+		    }
+			li {
+	        	a {
+		        	color: lightness(white, -50%);
+	/*				
+	              &:before {
+	                  content: "\f068";
+	                  font-family: "FontAwesome";
+	                  margin-right: 20px;
+	                  font-size: 15px;
+	              }
+	*/
+	        	}
+	    	}
+	    }
+	    li.menu-item-has-children {
+	        display: block;
+	        span.dropdown-arrow {
+	            position: absolute;
+	            height: 56px;
+	            width: 56px;
+	            top: 0;
+	            right: 0;
+	            display: flex;
+	            justify-content: center;
+	            align-content: center;
+	            background: rgba(255,255,255,.1);
+	            cursor: pointer;
+	            i {
+	                margin: auto;
+	                color: $primary;
+	                font-size: 20px;
+	            }
+	        }
+	        ul {
+		        background: alpha($primary, -0.9);
+	            a {
+		            text-transform: capitalize;
+		            color: $primary;
+	            }
+	        }
+	    }
+	    .current-menu-item > a {
+	        background: rgba(0,0,0,.05);
+	    }
+	}
+}
+
+body.has-sticky-menu {
+	#sticky-navigation {
+		.mobile-nav-btn {
+			display: none;
+		}
+		box-shadow: $shadow2;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 99;
+		@include transition(all 300ms ease-in-out);
+	}
+}

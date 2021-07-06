@@ -1,0 +1,195 @@
+/**
+ *	Code for Blog Layouts
+ */
+ 
+body {
+	&.blog #primary {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	article {
+		margin-bottom: 1.5em;
+		.oro-thumb {
+			img {
+				border-radius: .8em;
+				overflow: hidden;
+				
+			}
+		}
+		.entry-title {
+			margin-top: 0;
+			line-height: 1.5em;
+		}
+		.entry-meta {
+			@extend %heading-font;
+			margin-bottom: 1em;
+			margin-top: 0;
+			& > span {
+				margin-right: 1em;
+				padding: .5em 1em .75em;
+				border-radius: 1.1em;
+			}
+			a {
+				color: lightness(white, -30%);
+				text-transform: uppercase;
+				font-size: .75em;
+				letter-spacing: .1em;
+			}
+			i {
+				position: relative;
+				color: $primary;
+				margin-right: .5em;
+				font-size: 1.2em;
+				margin-bottom: -5px;
+				bottom: -1px;
+			}
+		}
+		.post-thumbnail {
+			margin-top: 1em;
+		}
+		&.oro-blog {
+			padding-right: 1em;
+			.wp-post-image {
+				border-radius: .8em;
+				@include transition(box-shadow 300ms $standard);
+				&:hover {
+					box-shadow: $shadow2;
+				}
+			}
+		}
+		.oro-read-more {
+			margin-top: 1.5em;
+		}
+		.more-link {
+			@extend .oro-btn;
+			@extend .bordered-primary;
+			text-decoration: none;
+			font-size: .75em;
+			padding: 0.75em 1.25em;
+			border-width: 2px;
+		}
+		.entry-footer {
+			@extend %heading-font;
+			text-transform: uppercase;
+			font-size: .75em;
+			font-weight: 400;
+			margin-top: 2em;
+			* {
+				margin-bottom: .5em;
+			}
+			.cat-links,.tags-links  {
+				font-weight: 500;
+				@media screen and (max-width: 767px) {
+					text-align: center;
+				}
+				a {
+					display: inline-block;
+					padding: 1em 1.25em;
+					margin: auto .5em;
+					line-height: 1;
+					margin-bottom: .75em;
+					background-color: lightness(white, -3%);
+					border-radius: 1.5em;
+					color: $primary;
+					@extend .shadow1;
+					//margin: auto 2em;
+				}
+			}
+		}
+		// Blog Layout
+		&.oro-blog {
+			margin-bottom: 4em;
+			.entry-title {
+				a {
+					@include line-clamp(1);
+				}
+			}
+		}
+		// List Layouts
+		&.oro-list {
+			margin-bottom: 4em;
+			.list-wrapper {
+				width: 100%;
+				border: solid 1px alpha(black, -0.92);
+				padding: 1.5em;
+				border-radius: .8em;
+				overflow: auto;
+				& > * {
+					float: left;
+				}
+			}
+			.oro-thumb {
+				img {
+					border-radius: 0;
+				}
+				@media screen and (max-width: 767px) {
+					margin-bottom: 1em;
+				}
+			}
+			.oro-list-content {
+				padding-left: 1.5em;
+			}
+			.entry-meta {
+				& > span {
+					padding-left: 0;
+				}
+			}
+			.cat-links {
+				margin-top: 1em;
+				a {
+					font-size: .8em;
+					margin: 0 .25em 1em 0;
+					@extend .oro-btn;
+					@extend .primary;
+					@extend .shadow1;
+				}
+			}
+		}
+		// Card Layout
+		&.oro-card {
+			float: left;
+			border-radius: .8em;
+			.oro-card-wrapper {
+				padding: 1.5em;
+				border-radius: .8em;
+				border: solid 1px alpha(black, -0.92);
+			}
+			.oro-thumb {
+				position: relative;
+				img {
+					border-radius: 0;
+				}
+				.card-posted-on {
+					position: absolute;
+					top: 0;
+					right: 0;
+					background: alpha($primary, -0.5);
+					@extend %heading-font;
+					font-weight: 400;
+					text-transform: uppercase;
+					padding: .25em .75em;
+					color: white;
+					.card-date {
+						font-size: 1.5em;
+					}
+					.card-month {
+						font-size: .8em;
+					}
+				}
+			}
+			.entry-header {
+				font-size: .75em;
+				word-wrap: normal;
+				.entry-title {
+					margin: 0;
+					line-height: 1.2;
+					padding-top: 0.6em;
+					a {
+						font-size: 0.9em;
+					}
+				}
+			}
+		}
+	}
+	
+}

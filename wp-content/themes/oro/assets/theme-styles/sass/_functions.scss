@@ -1,0 +1,32 @@
+// Easing Functions
+$standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+$decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+@mixin transition ( $property ) {
+	transition: $property;
+	-webkit-transition: $property;
+	-moz-transition: $property;
+	-ms-transition: $property;
+	-o-transition: $property;
+}
+
+@mixin transform( $property ) {
+	transform: $property;
+	-webkit-transform: $property;
+	-moz-transform: $property;
+	-ms-transform: $property;
+	-o-transform: $property;
+}
+
+@mixin line-clamp( $lines ) {
+	display: -webkit-box;
+	-webkit-line-clamp: $lines;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+@keyframes tabActive {
+	0%		{width: 0%;}
+	100%	{width: 50%}
+}

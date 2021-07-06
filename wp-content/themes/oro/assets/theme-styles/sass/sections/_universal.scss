@@ -1,0 +1,233 @@
+/**
+ *	Universal Code for the theme
+ */
+ 
+ .shadow1 {
+	@include transition(box-shadow 100ms $standard);
+	&:hover, &:focus {
+		@extend %shadow1;
+	}
+}
+
+.shadow2 {
+	@include transition(box-shadow 100ms $standard);
+	&:hover, &:focus {
+		@extend %shadow2;
+	}
+}
+
+.shadow3 {
+	@include transition(box-shadow 300ms $standard);
+	&:hover, &:focus {
+		@extend %shadow3;
+	}
+}
+
+.shadow4 {
+	@include transition(box-shadow 300ms $standard);
+	&:hover, &:focus {
+		@extend %shadow4;
+	}
+}
+
+.shadow5 {
+	@include transition(box-shadow 600ms $standard);
+	&:hover, &:focus {
+		@extend %shadow5;
+	}
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	@extend %body-font;
+	line-height: 1.8em;
+	letter-spacing: .03em;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+
+a, button {
+	color: $primary;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .title-font {
+	@extend %heading-font;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+	line-height: 1.2;
+	letter-spacing: 0;
+}
+
+%bordered-hover {
+	@include transform( scale(1.1) );
+}
+
+.oro-btn {
+	border-radius: 1.75em;
+	padding: .6em 1.25em;
+	border: 0;
+	letter-spacing: .05em;
+	@extend %heading-font;
+	text-transform: uppercase;
+	&:focus {
+		outline: none;
+	}
+	&.secondary {
+		color: $primary;
+		background-color: white;
+	}
+	&.primary {
+		color: white;
+		background-color: $primary;
+	}
+	&.bordered-primary {
+		color: $primary;
+		background-color: transparent;
+		border: solid 3px $primary;
+		@include transition(transform 100ms $standard);
+		&:hover, &:focus {
+			@extend %bordered-hover;
+		}
+	}
+	&.bordered-white {
+		color: white;
+		background-color: transparent;
+		border: solid 3px white;
+		@include transition(transform 100ms $standard);
+		&:hover, &:focus {
+			@extend %bordered-hover;
+		}
+	}
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.3em;
+	font-weight: 500;
+	letter-spacing: .03em;
+}
+
+h5 {
+	font-size: 1.2em;
+	font-weight: 500;
+	letter-spacing: .03em;
+}
+
+h6 {
+	font-size: 1em;
+	letter-spacing: .1em;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+#primary, #secondary {
+	width: 100%;
+}
+
+blockquote {
+    border-left: solid .2rem $primary;
+    margin: 4rem 0 1.25rem 0;
+    padding: .5rem 0 .5rem 2rem;
+    &:before, &:after {
+        content: "";
+    }
+    & p:last-child {
+        margin: 0;
+    }
+}
+ 
+pre, fieldset, input, textarea, table, table *, hr {
+	border-color: lightness( white, -10% );
+}
+
+figcaption {
+	text-align: center;
+}
+
+th, td {
+    border: solid 1px lightness( white, -10%);
+    padding: 1em 0.5em;
+    line-height: 1.4;
+    margin: 0;
+}
+
+ul, ol {
+    padding-left: .1em;
+    li {
+        margin: .5em 0;
+    }
+}
+
+address {
+	margin-bottom: 1rem;
+	color: lightness( white, -40%);
+	font-style: italic;
+}
+
+cite {
+    font-size: 1em;
+    color: $primary;
+}
+
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	border-top: 1px solid lightness(white, -7%);
+}
+
+ins {
+	background-color: lightness($primary, +10%);
+	color: white;
+	text-decoration: none;
+	padding: 0 3px;
+}
+
+pre {
+	background-color: lightness(white, -3%);
+	text-overflow: ellipsis;
+}
+
+q {
+	font-style: italic;
+}
+
+.edit-link {
+	.post-edit-link {
+		@extend .oro-btn;
+		@extend .primary;
+	}
+}
+
+#content-wrapper {
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 250px;
+}
+
+.page-title {
+	margin: 0 auto 1em;
+}
+
+.page-content, .entry-content, .entry-summary {
+	margin: 1em 0 0;
+	a {
+		text-decoration: underline;
+	}
+}
